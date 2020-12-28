@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="tabPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="770.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="primitivasgraficas.FXMLTelaPrimitivasController">
+  <tabs>
+    <Tab fx:id="tabPrimitivas" text="Primitivas">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.7072649572649573" layoutX="107.0" layoutY="57.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane fx:id="acPCanvas" minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="766.0">
+                           <children>
+                              <Canvas fx:id="canvas" height="323.0" layoutX="48.0" layoutY="24.0" onMousePressed="#clkDown" onMouseReleased="#clkUp" width="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane fx:id="acPBotoes" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <VBox fx:id="vboxReta" layoutX="8.0" layoutY="11.0" prefHeight="135.0" prefWidth="163.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="lbReta" text="Reta">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <RadioButton fx:id="rbEqReal" mnemonicParsing="false" text="Eq. Real da reta">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="primitivas" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbDDA" mnemonicParsing="false" text="DDA" toggleGroup="$primitivas">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbBresenham" mnemonicParsing="false" text="Bresenham" toggleGroup="$primitivas">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </RadioButton>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                 </padding>
+                              </VBox>
+                              <Button fx:id="btDesfazer" layoutX="676.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkDesfazer" text="Desfazer" />
+                              <VBox fx:id="vboxcircunferencia" layoutX="170.0" prefHeight="135.0" prefWidth="163.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="lbCircunferencia" text="Circunferencia">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <RadioButton fx:id="rbEqGeralCirc" mnemonicParsing="false" prefHeight="46.0" prefWidth="156.0" text="Eq. Geral da circunferencia" toggleGroup="$primitivas" wrapText="true">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbTrigonometrica" mnemonicParsing="false" text="Trigonometricas" toggleGroup="$primitivas">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbPontoMedio" mnemonicParsing="false" text="Ponto Medio" toggleGroup="$primitivas">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </RadioButton>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="vboxElipse" layoutX="346.0" layoutY="-6.0" prefHeight="135.0" prefWidth="168.0" style="-fx-background-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="346.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="lbElipse" text="Elipse">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <RadioButton fx:id="rbElipsePP" mnemonicParsing="false" prefHeight="46.0" prefWidth="159.0" text="Elipse ponto medio" toggleGroup="$primitivas" wrapText="true">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </RadioButton>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                 </padding>
+                              </VBox>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Transformações 2D">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.6540469973890339" layoutX="171.0" layoutY="34.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane fx:id="acPCanvas" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: white;">
+                           <children>
+                              <Canvas fx:id="canvas2D" disable="true" height="462.0" onMouseClicked="#teste" onMousePressed="#clkDownP" onMouseReleased="#clkUpP" width="498.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane fx:id="acPTransformacoes" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="269.0">
+                           <children>
+                              <Button fx:id="clkNovo" layoutX="7.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkBtNovo" prefHeight="25.0" prefWidth="52.0" text="Novo" />
+                              <Button fx:id="btExcluir" disable="true" layoutX="65.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkBtExcluir" text="Excluir" />
+                              <ComboBox fx:id="cbListaPolignos" disable="true" layoutX="136.0" layoutY="62.0" onAction="#clkSelectPoli" prefHeight="25.0" prefWidth="121.0" />
+                              <Label fx:id="lbPolignos" layoutX="138.0" layoutY="46.0" prefHeight="15.0" prefWidth="113.0" text="Lista de Polignos" />
+                              <TableView fx:id="tbvXY" layoutX="6.0" layoutY="55.0" prefHeight="214.0" prefWidth="121.0">
+                                <columns>
+                                    <TableColumn fx:id="tbvCP" prefWidth="30.0" text="P" />
+                                  <TableColumn fx:id="tbvCX" prefWidth="45.0" text="X" />
+                                  <TableColumn fx:id="tbvCY" prefWidth="45.0" text="Y" />
+                                </columns>
+                              </TableView>
+                              <Pane fx:id="pnEscala" disable="true" layoutX="7.0" layoutY="394.0" prefHeight="63.0" prefWidth="253.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Label fx:id="lbXEscala" layoutX="8.0" layoutY="27.0" text="X:">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfXEscala" layoutX="31.0" layoutY="27.0" prefHeight="25.0" prefWidth="73.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Label fx:id="lbYEscala" layoutX="108.0" layoutY="27.0" text="Y:">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfYEscala" layoutX="131.0" layoutY="27.0" prefHeight="25.0" prefWidth="73.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Label fx:id="lbEscala" layoutX="98.0" layoutY="7.0" text="Escala" />
+                                    <Button fx:id="btOkEscala" layoutX="214.0" layoutY="27.0" mnemonicParsing="false" onAction="#clkBtOkEscala" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="pnTranslacao" disable="true" layoutX="136.0" layoutY="92.0" prefHeight="111.0" prefWidth="121.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Label fx:id="lbXTrans" layoutX="8.0" layoutY="27.0" text="X:">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfXTrans" layoutX="31.0" layoutY="27.0" prefHeight="25.0" prefWidth="73.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Label fx:id="lbYTrans" layoutX="8.0" layoutY="54.0" text="Y:">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfYTrans" layoutX="31.0" layoutY="54.0" prefHeight="25.0" prefWidth="73.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Label fx:id="lbTrans" layoutX="22.0" layoutY="7.0" text="Translação" />
+                                    <Button fx:id="btOkTrans" layoutX="39.0" layoutY="81.0" mnemonicParsing="false" onAction="#clkBtOkTranslacao" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                                 </children>
+                              </Pane>
+                              <Button fx:id="btReset" layoutX="133.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkBtReset" prefHeight="25.0" prefWidth="55.0" text="Reset" />
+                              <Pane fx:id="pnRotacao" disable="true" layoutX="7.0" layoutY="335.0" prefHeight="55.0" prefWidth="121.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Label fx:id="lbRotacao" layoutX="31.0" layoutY="4.0" text="Rotação" />
+                                    <TextField fx:id="tfRotacao" layoutX="6.0" layoutY="22.0" prefHeight="25.0" prefWidth="66.0" />
+                                    <Button fx:id="btOkRotacao" layoutX="73.0" layoutY="22.0" mnemonicParsing="false" onAction="#clkBtOkRot" prefHeight="10.0" prefWidth="37.0" text="OK" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="pnSelecao" disable="true" layoutX="7.0" layoutY="274.0" prefHeight="58.0" prefWidth="121.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <RadioButton fx:id="rbCentro" layoutX="22.0" layoutY="7.0" mnemonicParsing="false" selected="true" text="Centro">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="rotacao" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbOrigem" layoutX="22.0" layoutY="33.0" mnemonicParsing="false" text="Origem" toggleGroup="$rotacao" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="pnCisX" disable="true" layoutX="137.0" layoutY="208.0" prefHeight="58.0" prefWidth="121.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Label fx:id="lbCisalhamentoX" layoutX="6.0" layoutY="6.0" text="Cisalhamento X" />
+                                    <TextField fx:id="tfCisX" layoutX="6.0" layoutY="25.0" prefHeight="25.0" prefWidth="72.0" />
+                                    <Button fx:id="btOkCisX" layoutX="80.0" layoutY="25.0" mnemonicParsing="false" onAction="#clkBtOkCisX" text="OK" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="pnEspelho" disable="true" layoutX="139.0" layoutY="332.0" prefHeight="60.0" prefWidth="121.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Label fx:id="lbEspelhamento" layoutX="11.0" layoutY="7.0" text="Espelhamento" />
+                                    <RadioButton fx:id="rbEspX" layoutX="5.0" layoutY="30.0" mnemonicParsing="false" selected="true" text="X">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="espelhamento" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbEspY" layoutX="43.0" layoutY="30.0" mnemonicParsing="false" text="Y" toggleGroup="$espelhamento" />
+                                    <Button fx:id="btOkEsp" layoutX="82.0" layoutY="26.0" mnemonicParsing="false" onAction="#clkBtOkEsp" prefHeight="25.0" prefWidth="37.0" text="OK" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="pnCisY" disable="true" layoutX="137.0" layoutY="270.0" prefHeight="58.0" prefWidth="121.0" style="-fx-background-color: lightgray;">
+                                 <children>
+                                    <Label fx:id="lbCisalhamentoY" layoutX="6.0" layoutY="6.0" text="Cisalhamento Y" />
+                                    <TextField fx:id="tfCisY" layoutX="6.0" layoutY="25.0" prefHeight="25.0" prefWidth="72.0" />
+                                    <Button fx:id="btOkCisY" layoutX="80.0" layoutY="25.0" mnemonicParsing="false" onAction="#clkBtOkCisY" text="OK" />
+                                 </children>
+                              </Pane>
+                              <MenuButton fx:id="mbCor" disable="true" layoutX="194.0" layoutY="13.0" mnemonicParsing="false" text="Cor">
+                                <items>
+                                  <MenuItem fx:id="mbCorFlood" mnemonicParsing="false" onAction="#clkMbCorFlod" text="FloodFill" />
+                                  <MenuItem fx:id="mbCorScan" mnemonicParsing="false" onAction="#clkMbCorScan" text="ScanLine" />
+                                </items>
+                              </MenuButton>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="View Port">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.09956709956709957" layoutX="72.0" layoutY="8.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane fx:id="pnView" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label fx:id="lbAltura" layoutX="14.0" layoutY="14.0" text="Altura" />
+                              <TextField fx:id="tfAltura" layoutX="58.0" layoutY="9.0" prefHeight="25.0" prefWidth="64.0" />
+                              <Label fx:id="lbLargura" layoutX="190.0" layoutY="14.0" text="Largura" />
+                              <TextField fx:id="tfLargura" layoutX="245.0" layoutY="9.0" prefHeight="25.0" prefWidth="64.0" />
+                              <Button fx:id="btAplicar" layoutX="373.0" layoutY="9.0" mnemonicParsing="false" onAction="#clkBtAplicar" text="Aplicar" />
+                              <Button fx:id="btResetarView" layoutX="443.0" layoutY="9.0" mnemonicParsing="false" onAction="#clkBtResetarView" text="Resetar" />
+                              <Label fx:id="lbAvisoAltura" layoutX="131.0" layoutY="14.0" text="&quot;&lt; 412&quot;" />
+                              <Label fx:id="lbAvisoLargura" layoutX="315.0" layoutY="14.0" text="&quot;&lt; 768&quot;" />
+                              <Label fx:id="lbAvisosView" layoutX="529.0" layoutY="4.0" prefHeight="25.0" prefWidth="231.0" text="Label" visible="false" wrapText="true" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane fx:id="pnCanvasView" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Canvas fx:id="canvasViewPort" height="111.0" width="200.0" AnchorPane.bottomAnchor="301.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="568.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
